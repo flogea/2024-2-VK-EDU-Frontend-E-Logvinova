@@ -10,7 +10,7 @@
     />
   </head>
   <body>
-    <div class="header">
+    <header>
       <div class="leftside">
         <button class="icon-button back">
           <span class="material-symbols-rounded"> arrow_back_ios_new </span>
@@ -37,8 +37,9 @@
           <span class="material-symbols-rounded"> more_vert </span>
         </button>
       </div>
-    </div>
-    <div class="chat-container">
+    </header>
+
+    <!-- <div class="chat-container">
       <div class="messages"></div>
       <form class="form" action="/">
         <button type="submit" class="icon-button file">
@@ -55,7 +56,34 @@
           <span class="material-symbols-rounded"> send </span>
         </button>
       </form>
-    </div>
+    </div> -->
+
+    <main class="chat-container">
+      <ul class="messages"></ul>
+    </main>
+
+    <footer>
+      <form class="form" action="/">
+        <button type="submit" class="icon-button file">
+          <span class="material-symbols-rounded"> attachment </span>
+        </button>
+        <input
+          class="form-input"
+          name="message-text"
+          placeholder="Введите сообщение"
+          type="text"
+          autocomplete="off"
+        />
+        <button type="submit" class="send-button">
+          <span class="material-symbols-rounded"> send </span>
+        </button>
+      </form>
+
+      <button class="scroll-down-button">
+        <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+      </button>
+    </footer>
+
     <script src="./index.js"></script>
   </body>
 </html>
