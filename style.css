@@ -221,6 +221,7 @@ header {
     align-items: flex-end;
     gap: 12px;
     margin: 0;
+    padding: 0;
 }
 
 .message {
@@ -236,8 +237,13 @@ header {
         width: 50%;
     }
 
-    .chat-container {
+    .messages {
+        align-items: flex-start;
+    }
+
+    .timeAndMessageBlock {
         justify-content: flex-start;
+        flex-direction: row-reverse;
     }
 }
 
