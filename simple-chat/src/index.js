@@ -1,4 +1,5 @@
 import './index.css';
-import { ChatListPage } from './pages/ChatListPage/ChatListPage';
+import { handleRouteChange } from './utils/navigation';
 
-document.getElementById('root').appendChild(ChatListPage());
+window.addEventListener('popstate', handleRouteChange);
+window.onload = handleRouteChange;

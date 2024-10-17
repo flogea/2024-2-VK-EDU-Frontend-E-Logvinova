@@ -31,17 +31,27 @@ export const ChatListPage = () => {
     },
   ]);
 
-  chatList.appendChild(Header());
+  chatList.appendChild(Header('messenger'));
   chatList.appendChild(ChatList());
   chatList.appendChild(CreateChatButton());
+
+  load();
 
   return chatList;
 };
 
-window.onload = () => {
+const load = () => {
   const chatsContainer = document.querySelector('.chats');
-  loadChats(chatsContainer);
-  const currentChat = document.querySelector('.chat-item');
 
-  currentChat?.addEventListener('click', (event) => handleChatClick(event));
+  if (!chatsContainer) {
+    setTimeout(load, 100);
+    return;
+  }
+
+  chatsContainer.innerHTML = '';
+
+  loadChats(chatsContainer);
+  const currentChat = document.querySelectorAll('.chat-item');
+
+  currentChat?.forEach(() => addEventListener('click', (event) => handleChatClick(event)));
 };
