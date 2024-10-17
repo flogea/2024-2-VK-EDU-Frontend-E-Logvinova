@@ -42,7 +42,9 @@ header {
 
 .leftside {
     display: flex;
+    align-items: center;
     gap: 12px;
+    height: 32px;
 }
 
 .rightside-buttons {
@@ -82,6 +84,8 @@ header {
     cursor: pointer;
     padding: 0;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
 }
 
 .icon-button:hover {
@@ -141,6 +145,7 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     padding: 0;
+    margin: 0;
 }
 
 .chat-item {
@@ -152,6 +157,11 @@ header {
     gap: 12px;
     color: #FDFDFD;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chat-item:hover {
+    background: #212121;
 }
 
 .createChatBtn {
@@ -192,10 +202,6 @@ header {
     opacity: 1;
 }
 
-.chat-item:first-child {
-    padding: 0 16px 16px 16px;
-}
-
 .chat-last-message {
     font-size: 14px;
     color: #606060;
@@ -228,6 +234,10 @@ header {
 @media screen and (min-width: 600px) {
     .message {
         width: 50%;
+    }
+
+    .chat-container {
+        justify-content: flex-start;
     }
 }
 
