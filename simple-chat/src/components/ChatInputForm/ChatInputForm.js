@@ -1,4 +1,4 @@
-export function ChatInputForm() {
+export const ChatInputForm = () => {
   const footer = document.createElement('footer');
   footer.innerHTML = `
       <form class="form" action="/">
@@ -15,4 +15,4 @@ export function ChatInputForm() {
       </button>
   `;
   return footer;
-}
+};

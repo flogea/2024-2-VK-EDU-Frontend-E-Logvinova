@@ -1,3 +1,4 @@
+import { Modal } from '../components/Modal/Modal';
 import { ChatListPage } from '../pages/ChatListPage/ChatListPage';
 import { ChatPage } from '../pages/ChatPage/ChatPage';
 import { loadMessages } from './messageUtils';
@@ -20,10 +21,13 @@ export const handleRouteChange = () => {
   const root = document.getElementById('root');
 
   if (path.startsWith('#/chat/')) {
+    const chatId = path.split('#/chat/')[1];
     root.innerHTML = '';
-    root.appendChild(ChatPage());
-  } else {
-    root.innerHTML = '';
-    root.appendChild(ChatListPage());
+    root.appendChild(ChatPage(chatId));
+    return;
   }
+  root.innerHTML = '';
+  root.appendChild(ChatListPage());
+
+  Modal();
 };

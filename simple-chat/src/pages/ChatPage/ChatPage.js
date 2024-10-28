@@ -6,20 +6,7 @@ import { checkScrollPosition, scrollContentDown } from '../../utils/workWithScro
 import { handleKeyPress, handleSubmit } from '../../utils/formUtils';
 import { navigateToChatList } from '../../utils/navigation';
 
-export const ChatPage = () => {
-  const chat = document.createElement('div');
-  chat.classList.add('main');
-
-  chat.appendChild(Header('chat'));
-  chat.appendChild(ChatComponent());
-  chat.appendChild(ChatInputForm());
-
-  load();
-
-  return chat;
-};
-
-const load = () => {
+const load = (chatId) => {
   const form = document.querySelector('form');
   const input = document.querySelector('.form-input');
   const messagesContainer = document.querySelector('.messages');
@@ -27,21 +14,34 @@ const load = () => {
   const backBtn = document.querySelector('.back');
 
   if (!messagesContainer) {
-    setTimeout(load, 100);
+    setTimeout(() => load(chatId), 100);
     return;
   }
   messagesContainer.innerHTML = '';
 
-  loadMessages(messagesContainer, scrollButton);
+  loadMessages(chatId, messagesContainer, scrollButton);
   checkScrollPosition(messagesContainer, scrollButton);
 
   form.addEventListener('submit', (event) =>
-    handleSubmit(event, input, messagesContainer, scrollButton),
+    handleSubmit(event, input, messagesContainer, scrollButton, chatId),
   );
-  form.addEventListener('keypress', (event) => handleKeyPress(event, form));
+  form.addEventListener('keypress', (event) => handleKeyPress(event, form, chatId));
   scrollButton.addEventListener('click', () => scrollContentDown(messagesContainer));
   messagesContainer.addEventListener('scroll', () =>
     checkScrollPosition(messagesContainer, scrollButton),
   );
   backBtn.addEventListener('click', () => navigateToChatList());
+};
+
+export const ChatPage = (chatId) => {
+  const chat = document.createElement('div');
+  chat.classList.add('main');
+
+  chat.appendChild(Header('chat', chatId));
+  chat.appendChild(ChatComponent());
+  chat.appendChild(ChatInputForm());
+
+  load(chatId);
+
+  return chat;
 };
