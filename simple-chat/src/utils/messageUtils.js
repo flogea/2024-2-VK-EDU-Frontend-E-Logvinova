@@ -29,8 +29,8 @@ export const renderMessage = (messageData, messagesContainer, scrollButton) => {
   checkScrollPosition(messagesContainer, scrollButton);
 };
 
-export const loadMessages = (messagesContainer, scrollButton) => {
-  const messages = getDataFromLocalStorage();
+export const loadMessages = (chatId, messagesContainer, scrollButton) => {
+  const messages = getDataFromLocalStorage(chatId);
 
   messages.forEach((message) => {
     renderMessage(message, messagesContainer, scrollButton);

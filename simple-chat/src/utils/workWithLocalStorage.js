@@ -1,11 +1,11 @@
-export const getDataFromLocalStorage = () => {
-  return JSON.parse(localStorage.getItem('messages')) || [];
+export const getDataFromLocalStorage = (chatId) => {
+  return JSON.parse(localStorage.getItem(`messages${chatId}`)) || [];
 };
 
-export const saveMessage = (messageData) => {
-  const messages = getDataFromLocalStorage();
+export const saveMessage = (messageData, chatId) => {
+  const messages = getDataFromLocalStorage(chatId);
   messages.push(messageData);
-  localStorage.setItem('messages', JSON.stringify(messages));
+  localStorage.setItem(`messages${chatId}`, JSON.stringify(messages));
 };
 
 export const getChatsFromLocalStorage = () => {

@@ -1,4 +1,4 @@
-export const CreateChatButton = () => {
+export const ChatButton = () => {
   const createBtn = document.createElement('button');
   createBtn.classList.add('createChatBtn');
   createBtn.innerHTML = `
