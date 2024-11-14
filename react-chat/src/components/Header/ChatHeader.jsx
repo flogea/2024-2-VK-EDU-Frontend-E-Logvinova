@@ -16,7 +16,7 @@ export const ChatHeader = ({ avatar, name }) => {
       </button>
       <div className={styles.chatHeader}>
         <div className={styles.photo}>
-          <img className={styles.photo} src={avatar} alt="person photo" />
+          <img className={styles.photo} src={avatar} alt="person" />
         </div>
         <div className={styles.nameAndStatus}>
           <div className={styles.name}>{name}</div>

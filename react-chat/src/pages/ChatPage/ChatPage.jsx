@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './ChatPage.module.scss';
 import { useParams } from 'react-router-dom';
-import { useLocalStorage } from '../../utils/hooks/useLocalStorage';
 import { ChatInputForm, Header, Message, ScrollButton } from '../../components';
 import { useMessages } from '../../context/MessagesContext';
 import useScroll from '../../utils/hooks/useScroll';
@@ -33,7 +32,7 @@ export const ChatPage = () => {
         container.removeEventListener('scroll', handleScroll);
       }
     };
-  }, []);
+  }, [scrollToDiv]);
 
   return (
     <div className={styles.main}>

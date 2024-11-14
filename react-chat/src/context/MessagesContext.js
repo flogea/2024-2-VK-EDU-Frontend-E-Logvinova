@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useLocalStorage } from '../utils/hooks/useLocalStorage';
 
 const MessagesContext = createContext();
 

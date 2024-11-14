@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { ChatListItem, Header, RoundButton } from '../../components';
-import { useLocalStorage } from '../../utils/hooks/useLocalStorage';
 import { useChatContext } from '../../context/ChatContext';
 import NewChatModal from '../../components/Modal/NewChatModal';
 

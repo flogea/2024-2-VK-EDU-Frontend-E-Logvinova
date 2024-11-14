@@ -4,7 +4,6 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import styles from './ChatInputForm.module.scss';
 import { useDebounce } from '../../utils/hooks/useDebounce';
-import { useLocalStorage } from '../../utils/hooks/useLocalStorage';
 import { useMessages } from '../../context/MessagesContext';
 
 export const ChatInputForm = ({ chatId, scrollToDiv }) => {

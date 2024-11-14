@@ -1,4 +1,4 @@
-import React, { useParams } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChatListPage, ChatPage } from '../pages';
 

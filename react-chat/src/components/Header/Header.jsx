@@ -7,7 +7,6 @@ import { ChatHeader, MessengerHeader } from '.';
 import { useDebounce } from '../../utils/hooks/useDebounce';
 import { useLocalStorage } from '../../utils/hooks/useLocalStorage';
 import { useChatContext } from '../../context/ChatContext';
-import { chatListMock } from '../../mocks/chatListMock';
 
 export const Header = ({ type = 'messenger', chatId = 0 }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -16,8 +15,6 @@ export const Header = ({ type = 'messenger', chatId = 0 }) => {
   const { setFilteredChats } = useChatContext();
 
   const userInfo = !!chatId ? chats.find((chat) => chat.id === +chatId) : [];
-
-  const handleGoBack = () => {};
 
   useEffect(() => {
     if (debouncedSearchValue) {
@@ -28,7 +25,7 @@ export const Header = ({ type = 'messenger', chatId = 0 }) => {
     } else {
       setFilteredChats(chats);
     }
-  }, [debouncedSearchValue, chats]);
+  }, [debouncedSearchValue, chats, setFilteredChats]);
 
   return (
     <header>
