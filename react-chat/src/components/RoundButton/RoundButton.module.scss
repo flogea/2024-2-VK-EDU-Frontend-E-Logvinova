@@ -1,0 +1,37 @@
+.createChatBtn {
+  position: absolute;
+  bottom: 32px;
+  right: 16px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #3d3d3d;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  background: #1e1e1e;
+  padding: 4px 8px;
+  color: #707070;
+  transition: all 0.2s ease;
+  display: flex;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: hidden;
+
+  .createBtnText {
+    width: 1px;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    width: 120px;
+    color: #fdfdfd;
+
+    & .createBtnText {
+      flex: 1;
+      opacity: 1;
+    }
+  }
+}

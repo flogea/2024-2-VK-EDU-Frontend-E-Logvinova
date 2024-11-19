@@ -1,0 +1,29 @@
+.chatItem {
+  width: 100%;
+  padding: 16px;
+  border-bottom: 1px solid #262626;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fdfdfd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  .chatAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  .chatDetails {
+    .chatLastMessage {
+      font-size: 14px;
+      color: #606060;
+    }
+  }
+
+  &:hover {
+    background: #212121;
+  }
+}
